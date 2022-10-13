@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header {
+  width: 100%;
+  height: 15rem;
+  background-color: #f0ede9;
+  margin: auto;
+  padding: 1rem;
+}
+
+.inputbtn {
+  padding: 0.4rem 3rem 0.4rem 0.5rem;
+}
+.headerbtn {
+  background-color: black;
+  color: aliceblue;
+  padding: 0.6rem 2rem;
+  border-radius: 10px;
+}
+
+.taskrendor {
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.rendortodos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 1rem;
+}
+
+.h3todo {
+  height: auto;
+  padding: 1.5rem 1rem 1.5rem 0.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+  border-top: 3px solid black;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.btnsdiv {
+  margin-top: 2rem;
+}
+
+.btn {
+  background-color: #fff7ed;
+  color: rgb(0, 0, 0);
+  border: 1.5px solid black;
+  padding: 0.4rem 1rem;
+  margin-left: 5px;
+  border-radius: 5px;
+}
