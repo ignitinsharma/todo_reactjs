@@ -41,6 +41,19 @@ function AddTodo() {
     setTodos(mainarr);
   };
 
+  const togglefun = (id) => {
+    const afterupdate = todos.map((todos) => {
+      /* 
+      --> if we cant use spread todo here so when we toggle after that todos value not showing
+      because while toggle todo value is not present thats why we are using todos array here on
+      every single thing.... else condition not match so simple todo we will show nothing change....
+       */
+      return todos.id === id ? { ...todos, status: !todos.status } : todos;
+    });
+
+    setTodos(afterupdate);
+  };
+
   return (
     <>
       <div className="header">
@@ -73,15 +86,14 @@ function AddTodo() {
 
       <div className="taskrendor">
         <div className="rendortodos">
-          {/* 
-          --> This map function do nothing but print the arrays elements and return it
-              we apply on that todos array that map function...
-          */}
-          {todos.map((el) => ( // el is nothing but parameter of arrow function
-            <p className="h3todo">{el.title}
-            <div className="togglediv">
-              <p>{el.status?"Done 😍":"Pending 👀"}</p>
-            </div>
+          {todos.map((el) => (
+            <p className="h3todo">
+              {el.title}
+              <div>
+                <p>{el.status ? "Done😍" : "Pending👀"}</p>
+                <button onClick={() => togglefun(el.id)}>Toggle</button>
+                <button>Toggle</button>
+              </div>
             </p>
           ))}
         </div>
