@@ -46,7 +46,7 @@ code {
 .h3todo {
   height: auto;
   padding: 1.5rem 1rem 1.5rem 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-align: center;
   border-top: 3px solid black;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -67,4 +67,9 @@ code {
 
 .togglediv{
   border: 1px solid black;
+}
+
+.tgl{
+  font-size: 15px;
+  font-weight: 600;
 }

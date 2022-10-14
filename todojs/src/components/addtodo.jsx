@@ -41,6 +41,7 @@ function AddTodo() {
     setTodos(mainarr);
   };
 
+
   const togglefun = (id) => {
     const afterupdate = todos.map((todos) => {
       /* 
@@ -51,8 +52,14 @@ function AddTodo() {
       return todos.id === id ? { ...todos, status: !todos.status } : todos;
     });
 
+
+  /*
+  --> after changing status of status into object we simply update that into state for
+      rendor into DOM....
+  */
     setTodos(afterupdate);
   };
+
 
   return (
     <>
@@ -86,13 +93,26 @@ function AddTodo() {
 
       <div className="taskrendor">
         <div className="rendortodos">
+
+          {/* 
+          --> Here we are printing whole arrays elements by using that map High order function map
+              and then we accessing the value el.status (means status inside array of object)..
+          */}
           {todos.map((el) => (
             <p className="h3todo">
               {el.title}
               <div>
-                <p>{el.status ? "Done😍" : "Pending👀"}</p>
-                <button onClick={() => togglefun(el.id)}>Toggle</button>
-                <button>Toggle</button>
+
+                <p className="tgl">{el.status ? "Done😍" : "Pending👀"}</p>
+
+                {/* 
+                --> Here when todos map excute create that elemetns on every iteration buttons and status p tag
+                    but when the status p tag value change when button toggle fun is excute and this function
+                    we pass simple id from array of object and then we pass to toggle function and perform operation...
+                 */}
+
+                <button className="btn" onClick={() => togglefun(el.id)}>Toggle</button>
+                <button className="btn" >Delete</button>
               </div>
             </p>
           ))}
