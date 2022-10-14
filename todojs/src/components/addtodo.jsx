@@ -41,9 +41,9 @@ function AddTodo() {
     setTodos(mainarr);
   };
 
-
+  let afterupdate;
   const togglefun = (id) => {
-    const afterupdate = todos.map((todos) => {
+    afterupdate = todos.map((todos) => {
       /* 
       --> if we cant use spread todo here so when we toggle after that todos value not showing
       because while toggle todo value is not present thats why we are using todos array here on
@@ -52,14 +52,30 @@ function AddTodo() {
       return todos.id === id ? { ...todos, status: !todos.status } : todos;
     });
 
-
-  /*
+    /*
   --> after changing status of status into object we simply update that into state for
       rendor into DOM....
   */
     setTodos(afterupdate);
   };
 
+  let deletefun = (id) => {
+    /* 
+    --> Here we are checking while iterating in whhole array if which element user click and whose
+        id is same which is itreating so we skip that element and pass rest elements and print 
+        means pass through out map function...
+     */
+    let value = todos.map((todo) => {
+      return todo.id !== id;
+    });
+
+    /*
+    --> after skiping those element whose id is same which user is click and that is present on 
+        array so we skip that one and pass ohter....
+  */
+    setTodos(value);
+  
+  };
 
   return (
     <>
@@ -93,16 +109,15 @@ function AddTodo() {
 
       <div className="taskrendor">
         <div className="rendortodos">
-
           {/* 
           --> Here we are printing whole arrays elements by using that map High order function map
               and then we accessing the value el.status (means status inside array of object)..
           */}
+
           {todos.map((el) => (
             <p className="h3todo">
               {el.title}
               <div>
-
                 <p className="tgl">{el.status ? "Done😍" : "Pending👀"}</p>
 
                 {/* 
@@ -111,8 +126,12 @@ function AddTodo() {
                     we pass simple id from array of object and then we pass to toggle function and perform operation...
                  */}
 
-                <button className="btn" onClick={() => togglefun(el.id)}>Toggle</button>
-                <button className="btn" >Delete</button>
+                <button className="btn" onClick={() => togglefun(el.id)}>
+                  Toggle
+                </button>
+                <button onClick={() => deletefun(el.id)} className="btn">
+                  Delete
+                </button>
               </div>
             </p>
           ))}
