@@ -21,7 +21,7 @@ function AddTodo() {
     */
 
     let newitem = {
-      title: text,
+      title: text, // text is nothing but variable state where we are entering our todo data
       id: Math.random() + Date.now() + text,
       status: false,
     };
