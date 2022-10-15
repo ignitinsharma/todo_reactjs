@@ -74,6 +74,7 @@ function AddTodo() {
         array so we skip that one and pass ohter....
   */
     setTodos(value);
+    
   
   };
 
