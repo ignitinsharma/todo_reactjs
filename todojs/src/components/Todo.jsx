@@ -52,7 +52,7 @@ function AddTodo() {
       return todos.id === id ? { ...todos, status: !todos.status } : todos;
     });
 
-    /*
+  /*
   --> after changing status of status into object we simply update that into state for
       rendor into DOM....
   */
@@ -65,7 +65,7 @@ function AddTodo() {
         id is same which is itreating so we skip that element and pass rest elements and print 
         means pass through out map function...
      */
-    let value = todos.map((todo) => {
+    let value = todos.filter((todo) => {
       return todo.id !== id;
     });
 
@@ -74,8 +74,6 @@ function AddTodo() {
         array so we skip that one and pass ohter....
   */
     setTodos(value);
-    
-  
   };
 
   return (
@@ -116,25 +114,27 @@ function AddTodo() {
           */}
 
           {todos.map((el) => (
-            <p className="h3todo">
-              {el.title}
-              <div>
-                <p className="tgl">{el.status ? "Done😍" : "Pending👀"}</p>
+            <div>
+              <p className="h3todo">
+                {el.title}
+                <div>
+                  <p className="tgl">{el.status ? "Done😍" : "Pending👀"}</p>
 
-                {/* 
+                  {/* 
                 --> Here when todos map excute create that elemetns on every iteration buttons and status p tag
                     but when the status p tag value change when button toggle fun is excute and this function
                     we pass simple id from array of object and then we pass to toggle function and perform operation...
                  */}
 
-                <button className="btn" onClick={() => togglefun(el.id)}>
-                  Toggle
-                </button>
-                <button onClick={() => deletefun(el.id)} className="btn">
-                  Delete
-                </button>
-              </div>
-            </p>
+                  <button className="btn" onClick={() => togglefun(el.id)}>
+                    Toggle
+                  </button>
+                  <button onClick={() => deletefun(el.id)} className="btn">
+                    Delete
+                  </button>
+                </div>
+              </p>
+            </div>
           ))}
         </div>
       </div>
