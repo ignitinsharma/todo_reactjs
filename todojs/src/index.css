@@ -24,8 +24,15 @@ code {
   padding: 0.4rem 3rem 0.4rem 0.5rem;
 }
 .headerbtn {
+  background-color: white;
+  color: black;
+  padding: 0.6rem 2rem;
+  border-radius: 10px;
+}
+
+.headerbtn:hover {
   background-color: black;
-  color: aliceblue;
+  color: white;
   padding: 0.6rem 2rem;
   border-radius: 10px;
 }
@@ -48,8 +55,8 @@ code {
   padding: 1.5rem 1rem 1.5rem 0.5rem;
   font-size: 1.2rem;
   text-align: center;
-  border-top: 3px solid black;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-top: 3.2px solid black;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .btnsdiv {
@@ -65,11 +72,34 @@ code {
   border-radius: 5px;
 }
 
-.togglediv{
+.btn:hover {
+  background-color: rgb(33, 30, 30);
+  color: white;
+}
+
+.togglediv {
   border: 1px solid black;
 }
 
-.tgl{
+.tgl {
   font-size: 15px;
   font-weight: 600;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+  .rendortodos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 720px) and (min-width: 480px) {
+  .rendortodos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 1rem;
+  }
 }

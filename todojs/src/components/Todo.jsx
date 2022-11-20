@@ -79,7 +79,7 @@ function AddTodo() {
   return (
     <>
       <div className="header">
-        <h2>ToDo 😎 by Nitin Sharma</h2>
+        <h2>Todo by Nitin Sharma 😎</h2>
         <br />
 
         {/* 
